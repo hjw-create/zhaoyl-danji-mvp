@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>免疫换料日历 · 产蛋异常记录 · 赵艳玲</title>
+<meta name="description" content="中小蛋鸡场：免疫与换料节点日历 + 产蛋异常勾选。非诊疗、不开药、不卖兽药饲料。"/>
+<style>
+:root{--ink:#2a2416;--muted:#6a5c45;--line:#eadcc4;--bg:#faf6ee;--accent:#b56a12;--warn:#8a3d12}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;color:var(--ink);line-height:1.6;background:radial-gradient(880px 400px at 90% -10%,#ffe7b8,transparent 50%),var(--bg)}
+.top{position:sticky;top:0;background:rgba(250,246,238,.92);border-bottom:1px solid var(--line)}
+.top-in{max-width:820px;margin:0 auto;padding:10px 16px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+.brand{font-weight:800}.nav a{margin-left:8px;text-decoration:none;color:var(--ink);font-size:13px}
+.wrap{max-width:820px;margin:0 auto;padding:18px 16px 56px}
+.kicker{display:inline-block;font-size:12px;font-weight:700;color:var(--accent);background:#fff3dd;border-radius:999px;padding:4px 10px}
+h1{font-size:clamp(28px,5vw,40px);line-height:1.2;margin:8px 0}
+.lead{color:var(--muted);font-size:17px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}
+.chip{font-size:12px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:4px 10px}
+.cta{display:flex;gap:10px;flex-wrap:wrap}
+.btn{appearance:none;border:0;cursor:pointer;font:inherit;font-weight:700;text-decoration:none;display:inline-flex;padding:12px 16px;border-radius:12px}
+.btn-p{background:var(--accent);color:#fff}.btn-g{background:#fff;border:1px solid var(--line);color:var(--ink)}.btn-block{width:100%}
+.warn{margin:14px 0;padding:14px;border-radius:14px;background:#fff8ee;border-left:6px solid var(--warn)}
+.grid{display:grid;gap:12px}@media(min-width:720px){.g2{grid-template-columns:1.1fr .9fr}}
+.card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px;margin-top:14px}
+.q{margin:0 0 10px;padding:10px 12px;background:#fffaf2;border-left:3px solid var(--accent)}
+.q cite{display:block;font-style:normal;font-size:12px;color:var(--muted)}
+label.ck{display:flex;gap:10px;padding:10px 12px;border:1px solid var(--line);border-radius:12px;margin:0 0 8px}
+label.ck input{width:18px;height:18px;accent-color:var(--accent)}
+.field{margin:0 0 10px}.field>span{display:block;font-size:13px;font-weight:700;margin-bottom:4px}
+.field input,.field select,.field textarea{width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:10px;font:inherit}
+.row2{display:grid;gap:10px}@media(min-width:560px){.row2{grid-template-columns:1fr 1fr}}
+.bar{height:8px;background:#f3e6d0;border-radius:999px;overflow:hidden}.bar>i{display:block;height:100%;width:0;background:var(--accent)}
+.msg{font-weight:700}.ok{color:#7a4a08}.err{color:#8b2e1a}
+.item{border:1px dashed var(--line);border-radius:10px;padding:8px;margin-bottom:8px;font-size:13px}
+footer{margin-top:18px;font-size:12px;color:var(--muted)}
+</style>
+</head>
+<body>
+<header class="top"><div class="top-in"><div class="brand">免疫换料日历 · 产蛋异常</div><nav class="nav"><a href="#cal">节点日历</a><a href="#egg">产蛋异常</a><a href="#book">预约试填</a><a href="#hist">本机记录</a></nav></div></header>
+<main class="wrap">
+<div class="kicker">沈阳农业大学 · 课程 MVP · 中小蛋鸡场</div>
+<h1>节点别靠记，掉蛋能对上</h1>
+<p class="lead">给<strong>中小蛋鸡场场主、饲养员和协助记账的家属</strong>：一张免疫—换料节点日历，加上一天两笔产蛋与异常勾选。换班能看清免过没免过，不看病、不开药、不卖料。</p>
+<div class="chips"><span class="chip">赵艳玲 · 2024109079</span><span class="chip">动物科学</span><span class="chip">非诊疗 · 不卖料</span></div>
+<div class="cta"><a class="btn btn-p" href="#cal">先勾今天的节点</a><a class="btn btn-g" href="#egg">记产蛋和异常</a></div>
+<section class="warn"><strong>边界：</strong>本页只做节点提醒和观察记录。不诊断、不开药、不替代兽医，也不推销兽药或饲料、不卖传感器。</section>
+<section class="grid g2">
+<article class="card" style="margin-top:0">
+<h2>第3周访谈原话</h2>
+<blockquote class="q">「免疫日子墙历上画个圈，忙起来还是漏，经销商打电话催我才想起来。」<cite>FT-01 · 约2800羽 · 负责免疫与换料</cite></blockquote>
+<blockquote class="q">「换料后掉蛋，我想对照本子，产蛋写一本异常另写，对不上从哪天开始的。」<cite>FT-01</cite></blockquote>
+<blockquote class="q">「跟媳妇轮班，她说免过了我说没免过，吵完才去翻经销商微信记录。」<cite>FT-02 · 约1500羽 · 夫妻轮班</cite></blockquote>
+<blockquote class="q">「人话版日历有用，别一堆拉丁名；异常用勾选，别让我写作文。」<cite>FT-03 · 家庭蛋鸡场家属</cite></blockquote>
+</article>
+<article class="card" style="margin-top:0">
+<h2>三步</h2>
+<ol>
+<li>看今天该不该免疫、该不该换料，勾上“已做 / 未做”。</li>
+<li>产蛋只记个数，异常用勾选，不写病名、不写药名。</li>
+<li>结果留在本机，两周试填时可以一起翻。</li>
+</ol>
+<p>付费口径：先免费试用两周；打印表几块钱可以谈；传感器年费和卖料捆绑不做。</p>
+</article>
+</section>
+<section class="card" id="cal">
+<h2>免疫—换料节点（今天）</h2>
+<div class="bar"><i id="bar"></i></div>
+<p id="barText">已勾 0 / 5</p>
+<form id="calForm">
+<label class="ck"><input type="checkbox" name="c1"/> 看过今天是否到免疫日（已做 / 未做都要勾清，避免轮班各说各的）</label>
+<label class="ck"><input type="checkbox" name="c2"/> 看过今天是否到换料日，并记下从哪天开始换</label>
+<label class="ck"><input type="checkbox" name="c3"/> 换班交接写了“免过 / 没免过”，不是只口头说一声</label>
+<label class="ck"><input type="checkbox" name="c4"/> 没有把经销商催促当成已经做过的记录</label>
+<label class="ck"><input type="checkbox" name="c5"/> 边界：本页不开药、不卖兽药饲料、不上传感器</label>
+<div class="row2">
+<label class="field"><span>棚 / 批次</span><input name="batch" placeholder="例如：1号棚"/></label>
+<label class="field"><span>填写人</span><input name="who" placeholder="场主 / 饲养员 / 家属"/></label>
+</div>
+<button class="btn btn-p btn-block" type="submit">保存节点到本机</button>
+<p class="msg" id="calMsg"></p>
+</form>
+</section>
+<section class="card" id="egg">
+<h2>产蛋与异常（一天两笔）</h2>
+<p>只记观察，不写治疗方案。</p>
+<form id="eggForm">
+<div class="row2">
+<label class="field"><span>今天产蛋（个数，不知道可留空）</span><input name="eggs" inputmode="numeric" placeholder="例如：1860"/></label>
+<label class="field"><span>和前几天比</span>
+<select name="trend" required><option value="">请选择</option><option>差不多</option><option>少了，想对照是不是刚换料/刚免疫</option><option>还没记习惯</option></select></label>
+</div>
+<label class="field"><span>异常勾选（人话，不写病名）</span>
+<select name="flag" required><option value="">请选择</option><option>无明显异常</option><option>采食差</option><option>精神不好（只是观察，不去下结论）</option><option>掉蛋，但还对不上从哪天开始</option></select></label>
+<label class="field"><span>一句话</span><textarea name="note" placeholder="例如：换料第2天，产蛋比前天少，已勾上，不开药。"></textarea></label>
+<button class="btn btn-p btn-block" type="submit">保存产蛋记录到本机</button>
+<p class="msg" id="eggMsg"></p>
+</form>
+</section>
+<section class="card" id="book">
+<h2>预约两周试填</h2>
+<form id="bookForm">
+<div class="row2">
+<label class="field"><span>称呼</span><input name="name" required/></label>
+<label class="field"><span>手机</span><input name="phone" required pattern="1[3-9]\d{9}" placeholder="11位"/></label>
+</div>
+<button class="btn btn-p btn-block" type="submit">预约试填（仅存本机）</button>
+<p class="msg" id="bookMsg"></p>
+<p style="font-size:12px;color:var(--muted)">赵艳玲 · 18685471863。不推销饲料、不开药。</p>
+</form>
+</section>
+<section class="card" id="hist"><h2>本机最近记录</h2><div id="list"></div><button class="btn btn-g" type="button" id="clear">清空</button></section>
+<footer>赵艳玲 2024109079 · 公网 https://hjw-create.github.io/zhaoyl-danji-mvp/ · 数据只留在浏览器。</footer>
+</main>
+<script>
+(function(){
+var KEY='zhaoyl_danji_v1';
+function load(){try{return JSON.parse(localStorage.getItem(KEY)||'[]')}catch(e){return[]}}
+function save(l){localStorage.setItem(KEY,JSON.stringify(l.slice(0,40)));render()}
+function stamp(){var d=new Date(),p=n=>n<10?'0'+n:''+n;return d.getFullYear()+'-'+p(d.getMonth()+1)+'-'+p(d.getDate())+' '+p(d.getHours())+':'+p(d.getMinutes())}
+function render(){var l=load(),b=document.getElementById('list');b.innerHTML=l.length?l.map(r=>'<div class="item"><b>'+r.type+' · '+r.at+'</b><div>'+r.summary+'</div></div>').join(''):'<p>还没有记录。</p>'}
+function bar(){var boxes=document.querySelectorAll('#calForm input[type=checkbox]');var n=0;boxes.forEach(b=>{if(b.checked)n++});document.getElementById('bar').style.width=(n/boxes.length*100)+'%';document.getElementById('barText').textContent='已勾 '+n+' / '+boxes.length}
+document.querySelectorAll('#calForm input[type=checkbox]').forEach(b=>b.onchange=bar);bar();
+document.getElementById('calForm').onsubmit=function(e){e.preventDefault();var fd=new FormData(e.target);var n=['c1','c2','c3','c4','c5'].filter(k=>fd.get(k)).length;var msg=document.getElementById('calMsg');if(n<5){msg.className='msg err';msg.textContent='请五项都看过再保存。';return}var list=load();list.unshift({type:'节点日历',at:stamp(),summary:'棚：'+(fd.get('batch')||'未填')+'；填写人：'+(fd.get('who')||'未填')+'；五项已勾。'});save(list);msg.className='msg ok';msg.textContent='已保存在本机。本页不指定用哪款药或料。'};
+document.getElementById('eggForm').onsubmit=function(e){e.preventDefault();var fd=new FormData(e.target);var list=load();list.unshift({type:'产蛋异常',at:stamp(),summary:'产蛋：'+((fd.get('eggs')||'未填').toString().trim()||'未填')+'；对比：'+fd.get('trend')+'；异常：'+fd.get('flag')+'；备注：'+((fd.get('note')||'无').toString().trim()||'无')});save(list);document.getElementById('eggMsg').className='msg ok';document.getElementById('eggMsg').textContent='已保存。异常请找线下兽医，不要在这里求药。'};
+document.getElementById('bookForm').onsubmit=function(e){e.preventDefault();var fd=new FormData(e.target);var phone=(fd.get('phone')||'').toString();var msg=document.getElementById('bookMsg');if(!/^1[3-9]\d{9}$/.test(phone)){msg.className='msg err';msg.textContent='请填11位手机号。';return}var list=load();list.unshift({type:'预约试填',at:stamp(),summary:'称呼：'+fd.get('name')+'；手机：'+phone});save(list);msg.className='msg ok';msg.textContent='预约草稿在本机。试填不卖料。';e.target.reset()};
+document.getElementById('clear').onclick=function(){if(confirm('清空本机记录？')){localStorage.removeItem(KEY);render()}};
+render();
+})();
+</script>
+</body>
+</html>
